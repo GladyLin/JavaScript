@@ -1,0 +1,466 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+:root {
+    --bg-color: rgb(15, 91, 192);
+    --text-color: rgb(150, 195, 250);
+    --border-color: rgb(5, 45, 100);
+    --btn-color: rgb(5, 45, 100);
+    --answer-color: rgb(255, 204, 0);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.Container {
+    width: 80vw;
+    height: 85vh;
+    margin: 0px auto;
+    padding-top: 100px;
+}
+
+.Game {
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.Flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.Flex-wrap {
+    flex-wrap: wrap;
+}
+
+.Size {
+    width: 100%;
+    height: auto;
+    padding: 0px 40px;
+}
+
+.Border {
+    border: 1px solid var(--border-color);
+    outline: 1px solid var(--border-color);
+}
+
+h1 {
+    color: var(--text-color);
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-top: 25px;
+}
+
+input {
+    background-color: var(--bg-color);
+    padding: 8px 5px;
+    border: 1.5px solid var(--border-color);
+    color: var(--text-color);
+    border-radius: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+
+::placeholder {
+    color: var(--border-color);
+    font-size: 14px;
+}
+
+.btn {
+    color: var(--text-color);
+    background-color: var(--btn-color);
+    border: none;
+}
+
+.btn:hover {
+    transition: .25s;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.Answer {
+    width: auto;
+    height: 80px;
+    text-align: left;
+    font-size: 17px;
+    color: var(--answer-color);
+}
+
+/* 五星評點 */
+.formStar {
+    border-radius: 40px 0px 0px 0px;
+
+    background-image: url(../imgs/Logo.png);
+    background-size: 75%;
+    background-repeat: no-repeat;
+    background-position: 50% 30%;
+
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+}
+
+.formStar #score {
+    text-align: center;
+    color: var(--text-color);
+    padding-top: 10px;
+}
+
+.formStar img {
+    height: 40px;
+    cursor: pointer;
+}
+
+.formStar img:hover {
+    transform: scale(1.15);
+    transition: .2s;
+}
+
+/* 九九乘法表 */
+.form99 {
+    grid-area: 1/ 2/ 2/ 4;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.form99 td {
+    color: var(--border-color);
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.4;
+    text-align: left;
+    padding: 0px 12px;
+}
+
+/* 溫度轉換 */
+.formTemperature {
+    background-image: url(../imgs/homework_7.png);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 94% 95%;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.formTemperature .Part {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.formTemperature .Part .btn {
+    border-radius: 0%;
+}
+
+.formTemperature .Part input:nth-child(1) {
+    border-radius: 20px 20px 0px 0px;
+}
+
+.formTemperature .Part input:nth-child(3) {
+    border-radius: 0px 0px 20px 20px;
+}
+
+/* 個人資料檢查 */
+.formPerson {
+    border-radius: 0px 40px 0px 0px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.formPerson ul {
+    margin-top: -10px;
+}
+
+.formPerson li>input {
+    width: 92%;
+}
+
+.formPerson ul>li:nth-child(2n) {
+    color: var(--answer-color);
+    margin-top: 6px;
+    text-align: left;
+    font-size: 10px;
+    font-weight: 200;
+    height: 20px;
+}
+
+/* 種樹機器人 */
+.formTree {
+    border-radius: 0px 0px 0px 40px;
+
+    grid-area: 2/ 1/ 4/ 2;
+    background-image: url(../imgs/homework_2.png);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 93% 97%;
+}
+
+#Tree_Result {
+    margin-left: -40px;
+    margin-right: -40px;
+
+    text-align: center;
+    line-height: 1.3;
+    color: var(--answer-color);
+}
+
+/* 生日換算年齡 */
+.formBirthday {
+    background-image: url(../imgs/homework_10.png);
+    background-size: 21%;
+    background-repeat: no-repeat;
+    background-position: 92% 94%;
+}
+
+.formBirthday>#Calender {
+    height: 18px;
+}
+
+/* 終極密碼 */
+.formCode {
+    background-image: url(../imgs/homework_3.png);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 92% 95%;
+}
+
+/* 閏年計算機 */
+.formYear {
+    background-image: url(../imgs/homework_4.png);
+    background-size: 26%;
+    background-repeat: no-repeat;
+    background-position: 95% 95%;
+}
+
+/* BMI計算機 */
+.formBMI {
+    background-image: url(../imgs/homework_1.png);
+    background-size: 27%;
+    background-repeat: no-repeat;
+    background-position: 95% 95%;
+}
+
+/* 密碼檢查 */
+.formPassword {
+    background-image: url(../imgs/homework_9.png);
+    background-size: 28%;
+    background-repeat: no-repeat;
+    background-position: 95% 95%;
+}
+
+.formPassword>.Answer {
+    width: 75%;
+    line-height: 1.3;
+}
+
+/* 密碼檢查 Regex */
+.formPassword_Reg {
+    background-image: url(../imgs/homework_11.png);
+    background-size: 28%;
+    background-repeat: no-repeat;
+    background-position: 95% 95%;
+}
+
+/* Email檢查 */
+.formEmil {
+    background-image: url(../imgs/homework_8.png);
+    background-size: 25%;
+    background-repeat: no-repeat;
+    background-position: 94% 94%;
+}
+
+.formPassword_Reg>.Answer {
+    width: 75%;
+    font-size: 18px;
+    line-height: 1.3;
+}
+
+/* Email檢查 Regex */
+.formEmail_Reg {
+    border-radius: 0px 0px 40px 0px;
+
+    background-image: url(../imgs/homework_13.png);
+    background-size: 31%;
+    background-repeat: no-repeat;
+    background-position: 93% 94%;
+}
+
+@media screen and (max-width:500px) {
+    .Container {
+        width: 100vw;
+        margin: 0px auto;
+        padding-top: 0px;
+    }
+
+    .Game {
+        height: auto;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .Size {
+        padding: 20px 50px;
+    }
+
+    .Border {
+        border: 0px solid var(--border-color);
+        outline: 0px solid var(--border-color);
+    }
+
+    h1 {
+        margin-top: 0px;
+    }
+
+    /* 五星評點 */
+    .formStar {
+        border-bottom: 5px solid var(--border-color);
+        background-color: var(--border-color);
+        border-radius: 0px;
+
+        background-size: 55%;
+        background-position: 50% 25%;
+        padding-top: 190px;
+        padding-bottom: 25px;
+    }
+
+    /* 九九乘法表 */
+    .form99 {
+        border-bottom: 4px solid var(--border-color);
+    }
+
+    .form99 td {
+        font-size: 12px;
+        line-height: 1.3;
+        padding: 0px 9px;
+    }
+
+    /* 溫度轉換 */
+    .formTemperature {
+        border-bottom: 4px solid var(--border-color);
+        background-image: none;
+        align-items: center;
+    }
+
+    .formTemperature .Part {
+        width: 100%;
+        flex-direction: row;
+    }
+
+    .formTemperature .Part input:nth-child(1) {
+        width: 80%;
+        border-radius: 20px 0px 0px 20px;
+    }
+
+    .formTemperature .Part input:nth-child(3) {
+        width: 80%;
+        border-radius: 0px 20px 20px 0px;
+    }
+
+    /* 個人資料檢查 */
+    .formPerson {
+        border-bottom: 4px solid var(--border-color);
+        padding-bottom: 50px;
+    }
+
+    .formPerson li>input {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .formPerson ul>li:nth-child(2n) {
+        margin-top: 10px;
+        font-size: 14px;
+        height: 10px;
+    }
+
+    /* 種樹機器人 */
+    .formTree {
+        border-bottom: 4px solid var(--border-color);
+        border-radius: 0px;
+        background-size: 20%;
+        background-position: 90% 95%;
+
+        padding-bottom: 50px;
+    }
+
+    #Tree_Result {
+        height: 420px;
+    }
+
+    /* 生日換算年齡 */
+    .formBirthday {
+        border-bottom: 4px solid var(--border-color);
+        background-size: 18%;
+        background-position: 87% 90%;
+        padding-bottom: 50px;
+    }
+
+    /* 終極密碼 */
+    .formCode {
+        border-bottom: 4px solid var(--border-color);
+        background-size: 20%;
+        background-position: 87% 90%;
+        padding-bottom: 50px;
+    }
+
+    /* 閏年計算機 */
+    .formYear {
+        border-bottom: 4px solid var(--border-color);
+        background-size: 22%;
+        background-position: 88% 90%;
+        padding-bottom: 50px;
+    }
+
+    /* BMI計算機 */
+    .formBMI {
+        border-bottom: 4px solid var(--border-color);
+        background-size: 22%;
+        background-position: 85% 90%;
+        padding-bottom: 50px;
+    }
+
+    /* 密碼檢查 */
+    .formPassword {
+        border-bottom: 4px solid var(--border-color);
+        background-size: 24%;
+        background-position: 87% 92%;
+        padding-bottom: 50px;
+    }
+
+    /* 密碼檢查 Regex */
+    .formPassword_Reg {
+        border-bottom: 4px solid var(--border-color);
+        background-size: 24%;
+        background-position: 87% 92%;
+        padding-bottom: 50px;
+    }
+
+    /* Email檢查 */
+    .formEmil {
+        border-bottom: 4px solid var(--border-color);
+        background-size: 21%;
+        background-position: 87% 92%;
+        padding-bottom: 50px;
+    }
+
+    /* Email檢查 Regex */
+    .formEmail_Reg {
+        background-size: 27%;
+        background-position: 87% 92%;
+        padding-bottom: 50px;
+    }
+}

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Go</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <section class="Container">
+        <div class="Game">
+            <form class="formStar Size Flex Border">
+                <div>
+                    <span><img src="./imgs/homework_14_gray.png" id="idimg1"></span>
+                    <span><img src="./imgs/homework_14_gray.png" id="idimg2"></span>
+                    <span><img src="./imgs/homework_14_gray.png" id="idimg3"></span>
+                    <span><img src="./imgs/homework_14_gray.png" id="idimg4"></span>
+                    <span><img src="./imgs/homework_14_gray.png" id="idimg5"></span>
+                    <div id="score">單擊點評，雙擊清除</div>
+                </div>
+            </form>
+
+            <form class="form99 Size Flex Border">
+                <h1>九九乘法表</h1>
+                <script>
+                    document.write('<table>')
+                    document.write('<tr>')
+                    for (let i = 2; i <= 9; i++) {
+                        document.write('<td>')
+                        for (let j = 1; j <= 9; j++) {
+                            document.write(`${i}x${j}=${i * j}<br>`)
+                        }
+                        document.write('</td>')
+                    }
+                    document.write('</tr>');
+                    document.write('</table>');
+                </script>
+            </form>
+
+            <form class="formTemperature Size Flex Border">
+                <div>
+                    <div class="Part">
+                        <input type="text" id="Celsius" placeholder="輸入攝氏溫度">
+                        <input class="btn" type="button" value="Go to" onClick="toFah()" />
+                        <input type="text" id="Fahrenheit_Result" placeholder="華氏溫度">
+                    </div>
+                    <br>
+                    <div class="Part">
+                        <input type="text" id="Fahrenheit" placeholder="輸入華氏溫度">
+                        <input class="btn" type="button" value="Go to" onClick="toCet()" />
+                        <input type="text" id="Celsius_Result" placeholder="攝氏溫度">
+                    </div>
+                </div>
+            </form>
+
+            <form class="formPerson Size Flex Border">
+                <h1>個人資料檢查</h1>
+                <ul>
+                    <li><input id="Nam" type="text" placeholder="姓名" maxlength="10" autofocus autocomplete="off"
+                            required onblur="checkNam()" /></li>
+                    <li id="NamResult"></li>
+                </ul>
+                <ul>
+                    <li><input id="Pwd1" type="password" placeholder="密碼" maxlength="15" autofocus autocomplete="off"
+                            required onblur="checkPwd()" /></li>
+                    <li id="Pwd1_Result"></li>
+                </ul>
+                <ul>
+                    <li><input id="Birthday" type="text" placeholder="生日(西元年月日)" maxlength="10" autofocus
+                            autocomplete="off" required onblur="checkDate()" /></li>
+                    <li id="DateResult"></li>
+                </ul>
+            </form>
+
+            <form class="formTree Size Flex Border">
+                <h1>種樹機器人</h1>
+                <input id="Tree_Height" type="text" placeholder="請輸入3-16任意數字" autofocus autocomplete="off" required />
+                <input class="btn" type="button" value="Go" onclick="drawTree()" />
+                <div id="Tree_Result"></div>
+            </form>
+
+            <form class="formBirthday Size Flex Border">
+                <h1>生日換算年齡</h1>
+                <input type="date" id="Calender" required>
+                <input class="btn" type="button" value="Go" onClick="getAge()" />
+                <div class="Answer" id="CalenderResult"></div>
+            </form>
+
+            <form class="formCode Size Flex Border">
+                <h1>終極密碼</h1>
+                <input id="Guess" type="text" placeholder="輸入1-100" autofocus autocomplete="off" required />
+                <input class="btn" type="button" value="Go" onclick="GuessNumber()" />
+                <div class="Answer" id="Code_Result"></div>
+            </form>
+
+            <form class="formYear Size Flex Border">
+                <h1>閏年計算機</h1>
+                <input id="Year" type="text" placeholder="請輸入西元年份" autofocus autocomplete="off" required />
+                <input class="btn" type="button" value="Go" onclick="checkYear()" />
+                <div class="Answer" id="Year_Result"></div>
+            </form>
+
+            <form class="formBMI Size Flex Border">
+                <h1>BMI計算機</h1>
+                <input id="height" type="text" placeholder="輸入身高(cm)" autofocus autocomplete="off" required />
+
+                <input id="weight" type="text" placeholder="輸入體重(kg)" autofocus autocomplete="off" required />
+
+                <input class="btn" type="button" value="Go" onclick="BMIcheck()" />
+                <div class="Answer BMIresult"></div>
+            </form>
+
+            <form class="formPassword Size Flex Border">
+                <h1>密碼檢查</h1>
+                <input id="Pwd2" type="password" placeholder="請輸入密碼" size="6" autofocus autocomplete="off" required />
+                <input class="btn" type="button" value="Go" onclick="checkPwd_Loop()" ; />
+                <div class="Answer" id="Pwd2_Result"></div>
+            </form>
+
+            <form class="formPassword_Reg Size Flex Border">
+                <h1>密碼檢查 Regex</h1>
+                <input id="Pwd3" type="password" placeholder="請輸入密碼" maxlength="15" autofocus autocomplete="off"
+                    required />
+                <input class="btn" id="Pwd3_btn" type="button" value="Go" onclick="checkPwd_Reg()" ; />
+                <div class="Answer" id="Pwd3_Result"></div>
+            </form>
+
+            <form class="formEmil Size Flex Border">
+                <h1>Email檢查</h1>
+                <input id="Email1" type="text" placeholder="請輸入任意email" autofocus autocomplete="off" required />
+                <input class="btn" type="button" value="Go" onclick="checkEmail1()" />
+                <div class="Answer" id="Email1_Result"></div>
+            </form>
+
+            <form class="formEmail_Reg Size Flex Border">
+                <h1>Email檢查 Regex</h1>
+                <input id="Email2" type="text" placeholder="請輸入你的email" max-length=30 autofocus autocomplete="off"
+                    required />
+                <input class="btn" type="button" value="Go" onclick="checkEmail2()" />
+                <div class="Answer" id="Email2_Result"></div>
+            </form>
+        </div>
+    </section>
+
+    <script src="./js/javascript.js"></script>
+</body>
+
+</html>
